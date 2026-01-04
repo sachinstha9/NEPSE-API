@@ -5,6 +5,11 @@ import os
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Hello World"}
+
+
 @app.get("/stock/{symbol}")
 def get_data(symbol: str):
     data = []
