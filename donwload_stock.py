@@ -94,12 +94,6 @@ def convert_stock_data_to_float(df):
     return df
 
 
-def save_stock_data_csv(df, filename):
-    """Save DataFrame to CSV without index."""
-    df.to_csv(filename, index=False)
-    print(f"Data saved to {filename}")
-
-
 def download_individual_stock_data(symbol):
     df_new = scrape_nepse_stock(f"https://merolagani.com/CompanyDetail.aspx?symbol={symbol}")
     df_new = convert_stock_data_to_float(df_new)
