@@ -126,5 +126,8 @@ def download_individual_stock_data(symbol):
     else:
         # CSV does not exist, save all
         df_new = df_new.sort_values(by='Date', ascending=False)
-        save_stock_data_csv(df_new, csv_filename)
-        print(f"{csv_filename} created with all data.")
+        
+        return df_new.to_json()
+        # save_stock_data_csv  } created with all data.")
+        
+print(download_individual_stock_data("SHIVM"))
