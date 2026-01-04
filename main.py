@@ -13,15 +13,15 @@ def read_root():
 def get_data(symbol: str):
     data = []
     
-    # file_path = f"{symbol}.csv"
-    # download_individual_stock_data(file_path)
+    file_path = f"{symbol}.csv"
+    download_individual_stock_data(file_path)
 
-    # with open(file_path, newline="", encoding="utf-8") as csvfile:
-    #     reader = csv.DictReader(csvfile)
-    #     for row in reader:
-    #         data.append(row)
+    with open(file_path, newline="", encoding="utf-8") as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            data.append(row)
             
-    # if os.path.exists(file_path):
-    #     os.remove(file_path)
+    if os.path.exists(file_path):
+        os.remove(file_path)
 
-    return {symbol: symbol}
+    return data
